@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+
+    <style type="text/css">
+              /* ---- reset ---- */
+          body {
+            margin: 0;
+            font: normal 75% Arial, Helvetica, sans-serif;
+          }
+          canvas {
+            display: block;
+            vertical-align: bottom;
+          } /* ---- particles.js container ---- */
+          #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+          } /* ---- stats.js ---- */
+    </style>
+  </head>
+  <body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div> <!-- stats - count particles -->
+    <div class="count-particles"> <span class="js-count-particles"></span></div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 150, density: { enable: true, value_area: 900 } },
+          color: { value: "#c50000" },
+          shape: {
+            type: "polygon",
+            stroke: { width: 0, color: "#841010" },
+            polygon: { nb_sides: 5 },
+            image: { src: "img/github.svg", width: 100, height: 100 }
+          },
+          opacity: {
+            value: 0.5,
+            random: true,
+            anim: { enable: true, speed: 0, opacity_min: 0.1, sync: true }
+          },
+          size: {
+            value: 1,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+          },
+          line_linked: {
+            enable: true,
+            distance: 90,
+            color: "#04a7eb",
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 }
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "repulse" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 170, line_linked: { opacity: 1 } },
+            bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 }
+          }
+        },
+        retina_detect: true
+    });
+
+    </script>
+  </body>
+</html>
